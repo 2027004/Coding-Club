@@ -1,16 +1,17 @@
 #menuArrow{
-    width:120px;
+    width:134px;
     height:20px;
 }
 #menu{
     position: absolute;
     right: 5%;
     top:0px;
+    align-items: center;
 }
 #menuLoadOut{
     display:none;
     background-color: lightgrey;
-    width:116px;
+    width:130px;
     height:200px;
     position: absolute;
     top: -200px;
@@ -19,47 +20,67 @@
     border-style: solid;
 }
 #write{
-    width:60%;
-    height: 40%;
-    border-style: solid;
     border-color: #dda0a0;
+    border-style: solid;
     background-color: pink;
-    position:absolute;
-    left:30%;
-    top:30%;
-    z-index: 2;
+}
+#colors{
+    border-color: #7788de;
+    border-style: solid;
+    background-color: #aaaadd;
+}
+#headbar{
+    background-color: white;
+    /*width:240px;
+    height:30px;*/
+    text-align: center;
+    border-color:#dda0a0;
+    border-style: solid;
+    top:-30px;
+    padding: 10px;
+    cursor: move;
+    z-index: 3;
 }
 #nameLabel{
-    position:absolute;
-    left:35%;
-    top:0%;
+    position:relative;
+
 }
 #nameText{
-    position:absolute;
-    left:35%;
-    top:5%;
+    position:relative;
 }
 #nameSub{
-    position:absolute;
-    left:35%;
-    top:12%;
+    position:relative;
 }
 
 #form2{
-    position:absolute;
-    left:35%;
-    top:27%;
+    position:relative;
 }
 
-#nameClose{
+#nameCloser{
+    position: absolute;
+    right:2px;
+    top:2px;
+}
+#colorCloser{
     position: absolute;
     right:2px;
     top:2px;
 }
 
 
+.menuButtons{
+    position:relative;
+    width: 100%;
+    height: 25px;
+}
 
-#writeForm{
+.pops{
+    width:60%;
+    height: 40%;
     position:absolute;
-    margin: 8%;
+    left:30%;
+    top:30%;
+    z-index: 2;
+    text-align: center;
+    display: none;
 }
