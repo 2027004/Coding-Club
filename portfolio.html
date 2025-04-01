@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./portfolio.css">
+    </head>
+
+    <body>
+        <h1 id="user">Portfolio Title</h1>
+        <p id="biog" style="white-space: pre-wrap;"></p>
+
+
+        <div id="write">
+            <div id="form1">
+                <label id="nameLabel">Type your name:</label>
+                <input type="text" id="nameText" placeholder="Name Here" /><br>
+                <button id="nameSub">Submit</button>
+            </div>
+            <button id="nameClose" onclick="nameCloser()">X</button>
+            <div id="form2">
+                <label id="biogLabel">Type your Biography:</label> <br>
+                <textarea id="bio" placeholder="Biography Here" rows="8" cols="20"></textarea><br>
+                <button id="biogSub">Change Biography</button>
+            </div>
+        </div>
+
+
+        <div id="dropdown1">
+            <br>
+            <label>color</label>
+            <select id="colorDrop" onchange="changeColor(value)">
+                <option></option>
+                <option value="#dd5555">Red</option>
+                <option value="#dd7733">Orange</option>
+                <option value="#ffee45">Yellow</option>
+                <option value="#aaeeaa">Green</option>
+                <option value="#5555dd">Blue</option>
+                <option value="#aa22dd">Purple</option>
+            </select>
+            <button id="colorClose" onclick="closeColor()">X</button>
+            <br>
+        </div>
+
+        <div id="menu">
+            <div id="menuLoadOut">
+                <button id="writeForm" onclick="writePop()">Change Text</button>
+            </div>
+            <button id="menuArrow" onclick="showMenu()">\/</button>
+        </div>
+
+        <script src="portfolio.js"></script>
+    </body>
+</html>
