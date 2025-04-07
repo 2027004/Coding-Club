@@ -41,6 +41,18 @@
     cursor: move;
     z-index: 3;
 }
+#headbar2{
+    background-color: white;
+    /*width:240px;
+    height:30px;*/
+    text-align: center;
+    border-color:#dda0a0;
+    border-style: solid;
+    top:-30px;
+    padding: 10px;
+    cursor: move;
+    z-index: 3;
+}
 #nameLabel{
     position:relative;
 
