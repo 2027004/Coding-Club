@@ -29,12 +29,24 @@
     border-style: solid;
     background-color: #aaaadd;
 }
-#headbar{
+#writeheadbar{
     background-color: white;
     /*width:240px;
     height:30px;*/
     text-align: center;
     border-color:#dda0a0;
+    border-style: solid;
+    top:-30px;
+    padding: 10px;
+    cursor: move;
+    z-index: 3;
+}
+#colorsheadbar{
+    background-color: white;
+    /*width:240px;
+    height:30px;*/
+    text-align: center;
+    border-color:#7788de;
     border-style: solid;
     top:-30px;
     padding: 10px;
