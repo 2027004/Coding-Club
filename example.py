@@ -4,3 +4,5 @@ fork = input("Put in anything you want")
 day = input(print("How is your day?"))
 
 print("Hello world")
+
+hello
