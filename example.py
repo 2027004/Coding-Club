@@ -8,3 +8,5 @@ print("Hello world")
 print(f"I am so glad you are feeling {day}")
 
 
+print("Why's Luke tryna deny his girlfriend???\nWe love Cece Hof")
+
