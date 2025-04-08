@@ -73,11 +73,15 @@ function nameCloser(){
 function colorCloser(){
     colors.style.display = "none";
 }
+function marginCloser(){
+    margin.style.display = "none";
+}
 
 
 //Make the DIV element draggagle:
 dragElement(write);
 dragElement(colors);
+dragElement(margin);
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -123,9 +127,17 @@ function dragElement(elmnt) {
 write.addEventListener('mousedown', (ev) => {
     write.style.zIndex = 3;
     colors.style.zIndex = 2;
+    margin.style.zIndex = 2;
 })
 
 colors.addEventListener('mousedown', (ev) => {
     colors.style.zIndex = 3;
     write.style.zIndex = 2;
+    margin.style.zIndex = 2;
+})
+
+margin.addEventListener('mousedown', (ev) => {
+    colors.style.zIndex = 2;
+    write.style.zIndex = 2;
+    margin.style.zIndex = 3;
 })
