@@ -28,15 +28,6 @@ biogSub.onclick = function(){
     document.getElementById("biog").textContent = myBio;
 }
 
-function changeColor(color){
-    document.body.style.backgroundColor = color;
-}
-function changeNameColor(textColor){
-    window.user.style.color = textColor;
-}
-function changeBiogColor(textColor){
-    window.biog.style.color = textColor;
-}
 
 
 function showMenu(){
@@ -124,6 +115,8 @@ function dragElement(elmnt) {
   }
 }
 
+
+/* MOVES TO FRONT */
 write.addEventListener('mousedown', (ev) => {
     write.style.zIndex = 3;
     colors.style.zIndex = 2;
@@ -141,3 +134,71 @@ margin.addEventListener('mousedown', (ev) => {
     write.style.zIndex = 2;
     margin.style.zIndex = 3;
 })
+
+/* CHANGE COLOR BUTTON */
+function changeColor(color){
+    document.body.style.backgroundColor = color;
+}
+function changeNameColor(textColor){
+    window.user.style.color = textColor;
+}
+function changeBiogColor(textColor){
+    window.biog.style.color = textColor;
+}
+/***************** ***************/
+/***************** ***************/
+/* CHANGING MARGINS!!!*/
+/***************** ***************/
+/***************** ***************/
+
+function moveName(direction){
+    if(direction=="right")
+        currentDirect = window.getComputedStyle(user).right;
+    if(direction=="left")
+        currentDirect = window.getComputedStyle(user).right;
+    if(direction=="up")
+        currentDirect = window.getComputedStyle(user).top;
+    if(direction=="bottom")
+        currentDirect = window.getComputedStyle(user).top;
+
+    currentDirect = currentDirect.slice(0,-2);
+
+    if(direction=="right"){
+        console.log(direction);
+        currentDirect = Number(currentDirect) - 10;
+        console.log(currentDirect);
+        user.style.right = currentDirect + "px";
+    }
+    if(direction=="left"){
+        console.log(direction);
+        currentDirect = Number(currentDirect) + 10;
+        console.log(currentDirect);
+        user.style.left = currentDirect + "px";
+    }
+    if(direction=="up"){
+        console.log(direction);
+        currentDirect = Number(currentDirect) - 10;
+        console.log(currentDirect);
+        user.style.top = currentDirect + "px";
+    }
+    if(direction=="bottom"){
+        console.log(direction);
+        currentDirect = Number(currentDirect) + 10;
+        console.log(currentDirect);
+        user.style.bottom = currentDirect + "px";
+    }
+}
+
+function moveBiogLeft(){
+    currentDirect = window.getComputedStyle(biog).right;
+    currentDirect = currentDirect.slice(0,-2);
+    currentDirect = Number(currentDirect) + 10;
+    biog.style.right = currentDirect + "px";
+}
+
+function moveBiogRight(){
+    currentDirect = window.getComputedStyle(biog).right;
+    currentDirect = currentDirect.slice(0,-2);
+    currentDirect = Number(currentDirect) - 10;
+    biog.style.right = currentDirect + "px";
+}
