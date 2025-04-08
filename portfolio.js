@@ -14,6 +14,8 @@ write = document.getElementById("write");
     write.style.display="none";
 colors = document.getElementById("colors")
     colors.style.display="none";
+margin = document.getElementById("margin")
+    margin.style.display="none";
 nameClose = document.getElementById("nameClose");
 
 nameSub.onclick = function(){
@@ -59,7 +61,9 @@ function writePop(){
 function colorsPop(){
     colors.style.display = "block";
 }
-
+function marginPop(){
+    margin.style.display = "block";
+}
 
 
 function nameCloser(){
@@ -72,8 +76,8 @@ function colorCloser(){
 
 
 //Make the DIV element draggagle:
-dragElement(document.getElementById("write"));
-dragElement(document.getElementById("colors"));
+dragElement(write);
+dragElement(colors);
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -115,3 +119,13 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
+
+write.addEventListener('mousedown', (ev) => {
+    write.style.zIndex = 3;
+    colors.style.zIndex = 2;
+})
+
+colors.addEventListener('mousedown', (ev) => {
+    colors.style.zIndex = 3;
+    write.style.zIndex = 2;
+})
