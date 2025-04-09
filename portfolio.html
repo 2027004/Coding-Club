@@ -93,9 +93,13 @@
                 <button id="titleDown" value="bottom" onclick="moveName(value)">\/</button>
             </div>
             <div>
-                <button id="biogLeft" onclick="moveBiogLeft()"><</button>
-                <p>Move Biography</p>
-                <button id="biogRight" onclick="moveBiogRight()">></button>
+                <div>
+                    <button id="biogRight" value="up" onclick="moveBiog(value)">/\</button>
+                    <button id="biogLeft" value="left" onclick="moveBiog(value)"><</button>
+                    <p>Move Biography</p>
+                    <button id="biogUp" value="right" onclick="moveBiog(value)">></button>
+                    <button id="biogDown" value="bottom" onclick="moveBiog(value)">\/</button>
+                </div>
             </div>
         </div>
 
