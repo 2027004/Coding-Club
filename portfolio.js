@@ -173,7 +173,7 @@ function moveName(direction){
         console.log(direction);
         currentDirect = Number(currentDirect) + 10;
         console.log(currentDirect);
-        user.style.left = currentDirect + "px";
+        user.style.right = currentDirect + "px";
     }
     if(direction=="up"){
         console.log(direction);
@@ -185,20 +185,44 @@ function moveName(direction){
         console.log(direction);
         currentDirect = Number(currentDirect) + 10;
         console.log(currentDirect);
-        user.style.bottom = currentDirect + "px";
+        user.style.top = currentDirect + "px";
     }
 }
 
-function moveBiogLeft(){
-    currentDirect = window.getComputedStyle(biog).right;
-    currentDirect = currentDirect.slice(0,-2);
-    currentDirect = Number(currentDirect) + 10;
-    biog.style.right = currentDirect + "px";
-}
+function moveBiog(direction){
+    if(direction=="right")
+        currentDirect = window.getComputedStyle(biog).right;
+    if(direction=="left")
+        currentDirect = window.getComputedStyle(biog).right;
+    if(direction=="up")
+        currentDirect = window.getComputedStyle(biog).top;
+    if(direction=="bottom")
+        currentDirect = window.getComputedStyle(biog).top;
 
-function moveBiogRight(){
-    currentDirect = window.getComputedStyle(biog).right;
     currentDirect = currentDirect.slice(0,-2);
-    currentDirect = Number(currentDirect) - 10;
-    biog.style.right = currentDirect + "px";
+
+    if(direction=="right"){
+        console.log(direction);
+        currentDirect = Number(currentDirect) - 10;
+        console.log(currentDirect);
+        biog.style.right = currentDirect + "px";
+    }
+    if(direction=="left"){
+        console.log(direction);
+        currentDirect = Number(currentDirect) + 10;
+        console.log(currentDirect);
+        biog.style.right = currentDirect + "px";
+    }
+    if(direction=="up"){
+        console.log(direction);
+        currentDirect = Number(currentDirect) - 10;
+        console.log(currentDirect);
+        biog.style.top = currentDirect + "px";
+    }
+    if(direction=="bottom"){
+        console.log(direction);
+        currentDirect = Number(currentDirect) + 10;
+        console.log(currentDirect);
+        biog.style.top = currentDirect + "px";
+    }
 }
