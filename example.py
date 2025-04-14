@@ -11,6 +11,7 @@ print("Nikko")
 
 print(f"I am so glad you are feeling {day}")
 print("Luke Blase")
+print("Ding dong the bitch is dead! Which old bitch? The wicked bitch!")
 print("Good job in the musical Luke!")
 
 import random
