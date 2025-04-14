@@ -7,6 +7,8 @@ print("Hello world")
 
 print("Finn")
 
+print("Nikko")
+
 print(f"I am so glad you are feeling {day}")
 print("Luke Blase")
 print("Good job in the musical Luke!")
