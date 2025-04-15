@@ -1,6 +1,3 @@
-let mySubmit;
-let myName;
-
 biog = document.getElementById("biog");
 user = document.getElementById("user");
 
@@ -10,22 +7,34 @@ form1 = document.getElementById("form1");
 form2 = document.getElementById("form2");
 bgColor = document.getElementById("bgColor");
 
+// pop-up menus
 write = document.getElementById("write");
     write.style.display="none";
 colors = document.getElementById("colors")
     colors.style.display="none";
 margin = document.getElementById("margin")
     margin.style.display="none";
-nameClose = document.getElementById("nameClose");
+    
+
 
 nameSub.onclick = function(){
-    myName = document.getElementById("nameText").value;
-    document.getElementById("user").textContent = `${myName}'s Portfolio`;
+    const myName = document.getElementById("nameText").value;
+    fetch("/my-page", {
+        method: "POST",
+        headers : {"Content-Type": "application/json"},
+        body: JSON.stringify({title : myName})
+    })
+    .then(() => {document.getElementById("user").textContent = `${myName}'s Portfolio`});
 }
 
 biogSub.onclick = function(){
-    myBio = document.getElementById("bio").value;
-    document.getElementById("biog").textContent = myBio;
+    const myBio = document.getElementById("bio").value;
+    fetch("/my-page", {
+        method:"POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({biog:myBio})
+    })
+    .then(() => {document.getElementById("biog").textContent = myBio});
 }
 
 
@@ -60,7 +69,6 @@ function marginPop(){
 function nameCloser(){
     write.style.display= "none";
 }
-
 function colorCloser(){
     colors.style.display = "none";
 }
@@ -122,13 +130,11 @@ write.addEventListener('mousedown', (ev) => {
     colors.style.zIndex = 2;
     margin.style.zIndex = 2;
 })
-
 colors.addEventListener('mousedown', (ev) => {
     colors.style.zIndex = 3;
     write.style.zIndex = 2;
     margin.style.zIndex = 2;
 })
-
 margin.addEventListener('mousedown', (ev) => {
     colors.style.zIndex = 2;
     write.style.zIndex = 2;
@@ -137,13 +143,28 @@ margin.addEventListener('mousedown', (ev) => {
 
 /* CHANGE COLOR BUTTON */
 function changeColor(color){
-    document.body.style.backgroundColor = color;
+    fetch("/my-page", {
+        method:"POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({background_color:color})
+    })
+    .then(() => {document.body.style.backgroundColor = color});
 }
 function changeNameColor(textColor){
-    window.user.style.color = textColor;
+    fetch("/my-page", {
+        method:"POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({title_color:textColor})
+    })
+    .then(() => {window.user.style.color = textColor});
 }
 function changeBiogColor(textColor){
-    window.biog.style.color = textColor;
+    fetch("/my-page", {
+        method:"POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({biog_color:textColor})
+    })
+    .then(() => {window.biog.style.color = textColor});
 }
 /***************** ***************/
 /***************** ***************/
@@ -225,4 +246,15 @@ function moveBiog(direction){
         console.log(currentDirect);
         biog.style.top = currentDirect + "px";
     }
+}
+
+window.onload = async () => {
+    const res = await fetch("/my-page");
+    const data = await res.json();
+
+    document.getElementById("user").textContent = `${data['title']}'s Portfolio`;
+    document.getElementById("biog").textContent = data["biog"];
+    document.body.style.backgroundColor = data["background_color"];
+    window.user.style.color = data["title_color"];
+    window.biog.style.color = data["biog_color"];
 }
