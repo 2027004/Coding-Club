@@ -3,7 +3,7 @@
 }
 #biog{
     position: absolute;
-    
+    top: 100px;
 }
 
 #menuArrow{
@@ -41,6 +41,12 @@
 }
 
 #margin{
+    border-color: #465846;
+    border-style: solid;
+    background-color: #aabbaa;
+    z-index:3;
+}
+#templates{
     border-color: #465846;
     border-style: solid;
     background-color: #aabbaa;
