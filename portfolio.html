@@ -8,24 +8,27 @@
         <h1 id="user">Portfolio Title</h1>
         <p id="biog" style="white-space: pre-wrap;"></p>
 
+        
         <!-- Change text options-->
         <div id="write" class="pops">
             <button id="nameCloser" onclick="nameCloser()">X</button>
             <div id="writeheadbar">Drag Menu</div>
             <br>
-            <div id="form1">
-                <label id="nameLabel">Type your name:</label>
+            <div id="writeBody" style="overflow-y:scroll;">
+                <div id="form1">
+                    <label id="nameLabel">Type your name:</label>
+                    <br>
+                    <input type="text" id="nameText" placeholder="Name Here" /><br>
+                    <button id="nameSub">Submit</button>
+                </div>
                 <br>
-                <input type="text" id="nameText" placeholder="Name Here" /><br>
-                <button id="nameSub">Submit</button>
-            </div>
-            <br>
-            <br>
+                <br>
 
-            <div id="form2">
-                <label id="biogLabel">Type your Biography:</label> <br>
-                <textarea id="bio" placeholder="Biography Here" rows="8" cols="20"></textarea><br>
-                <button id="biogSub">Change Biography</button>
+                <div id="form2">
+                    <label id="biogLabel">Type your Biography:</label> <br>
+                    <textarea id="bio" placeholder="Biography Here" rows="8" cols="20"></textarea><br>
+                    <button id="biogSub">Change Biography</button>
+                </div>
             </div>
 
 
@@ -36,19 +39,19 @@
 
             <div id="colorsheadbar">Drag Menu</div>
             <button id="colorCloser" onclick="colorCloser()">X</button>
-
-            <div id="changeNameColor">
-                <label>Title color</label>
-                <select id="nameColorDrop" onchange="changeNameColor(value)">
-                    <option></option>
-                    <option value="#dd5555">Red</option>
-                    <option value="#dd7733">Orange</option>
-                    <option value="#ffee45">Yellow</option>
-                    <option value="#aaeeaa">Green</option>
-                    <option value="#5555dd">Blue</option>
-                    <option value="#aa22dd">Purple</option>
-                </select>
-            </div>
+            <div id="colorBody" style="overflow-y: scroll;">
+                <div id="changeNameColor">
+                    <label>Title color</label>
+                    <select id="nameColorDrop" onchange="changeNameColor(value)">
+                        <option></option>
+                        <option value="#dd5555">Red</option>
+                        <option value="#dd7733">Orange</option>
+                        <option value="#ffee45">Yellow</option>
+                        <option value="#aaeeaa">Green</option>
+                        <option value="#5555dd">Blue</option>
+                        <option value="#aa22dd">Purple</option>
+                    </select>
+                </div>
 
                 <div id="bgColor">
                     <br>
@@ -63,7 +66,7 @@
                         <option value="#aa22dd">Purple</option>
                     </select>
                     <br>
-                </div>
+                    </div>
 
                 <div id="biogColor">
                     <br>
@@ -79,26 +82,31 @@
                     </select>
                     <br>
                 </div>
+            </div>
         </div>
 
         <!--Change margins-->
         <div id="margin"class="pops">
             <button id="marginCloser" onclick="marginCloser()">X</button>
             <div id="marginheadbar">Drag Menu</div>
-            <div>
-                <button id="titleRight" value="up" onclick="moveName(value)">/\</button>
-                <button id="titleLeft" value="left" onclick="moveName(value)"><</button>
-                <p>Move Title</p>
-                <button id="titleUp" value="right" onclick="moveName(value)">></button>
-                <button id="titleDown" value="bottom" onclick="moveName(value)">\/</button>
-            </div>
-            <div>
+
+            <div id="marginBody" style="overflow-y: scroll;">
                 <div>
-                    <button id="biogRight" value="up" onclick="moveBiog(value)">/\</button>
-                    <button id="biogLeft" value="left" onclick="moveBiog(value)"><</button>
-                    <p>Move Biography</p>
-                    <button id="biogUp" value="right" onclick="moveBiog(value)">></button>
-                    <button id="biogDown" value="bottom" onclick="moveBiog(value)">\/</button>
+                    <button id="titleLeft" value="left" onclick="moveName(value)"><</button>
+                    <button id="titleRight" value="right" onclick="moveName(value)">></button>
+                    <p>Move Title</p>
+                    <button id="titleUp" value="up" onclick="moveName(value)">/\</button>
+                    <button id="titleDown" value="bottom" onclick="moveName(value)">\/</button>
+                </div>
+                <br><hr style="border-color: #465846;"><br>
+                <div>
+                    <div>
+                        <button id="biogLeft" value="left" onclick="moveBiog(value)"><</button>
+                        <button id="biogRight" value="right" onclick="moveBiog(value)">></button>
+                        <p>Move Biography</p>
+                        <button id="biogUp" value="up" onclick="moveBiog(value)">/\</button>
+                        <button id="biogDown" value="bottom" onclick="moveBiog(value)">\/</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -112,6 +120,7 @@
                 <button id="writeForm" class="menuButtons" onclick="writePop()">Change Text</button>
                 <button id="colorForm" class="menuButtons" onclick="colorsPop()">Change Coloring</button>
                 <button id="marginForm" class="menuButtons" onclick="marginPop()">Change Margins</button>
+                <button id="templatesForm" class="menuButtons" onclick="templatesPop()">Templates</button>
             </div>
             <button id="menuArrow" onclick="showMenu()">\/</button>
         </div>
