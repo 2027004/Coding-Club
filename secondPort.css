@@ -1,0 +1,23 @@
+#templates{
+    border-color: #dd9944;
+    border-style: solid;
+    background-color: #fabf37;
+    z-index:3;
+}
+#templatesHeadbar{
+    background-color: white;
+    /*width:240px;
+    height:30px;*/
+    text-align: center;
+    border-color:#dd9944;
+    border-style: solid;
+    top:-30px;
+    padding: 10px;
+    cursor: move;
+    /*z-index: 3;*/
+}
+#templatesCloser{
+    position: absolute;
+    right:2px;
+    top:2px;
+}
