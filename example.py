@@ -1,71 +1,18 @@
 name = input("What is your name: ")
 print(f"hello {name}")
 
-day = input("How is your day?")
+day = input("How is your day?:")
 
-print("Hello world")
+if(day == "good"):
+  print("I dont give a frick boi please go ruin it and do your homework")
 
-print("Finn")
+x = int(input("How many hours have you played fornite all time?: "))
 
-print("Nikko")
-
-print(f"I am so glad you are feeling {day}")
-print("Luke Blase")
-print("Ding dong the bitch is dead! Which old #itch?")
-print("Good job in the musical Luke!")
-
-import random
-yourList = ["rock", "paper", "scissors"]
-play = ("y")
-cluck = 0
-while play == ("y"):
-    hand = input("choose one, rock, paper, or scissors ")
-    random.shuffle(yourList)
-
-    while hand == ("scissors"):
-
-        if yourList[1] == "rock":
-            print("lose")
-            play = input("do you want to play again y/n ")
-            hand = ("choose one, rock, paper, or scissors ")
-        if yourList[1] == "paper":
-            print("win")
-            cluck = cluck + 1
-            play = input("do you want to play again y/n ")
-            hand = ("choose one, rock, paper, or scissors ")
-        if yourList[1] == "scissors":
-            print("tie")
-            play = input("do you want to play again y/n ")
-            hand = ("choose one, rock, paper, or scissors ")
-
-    while hand == "rock":
-        if yourList[1] == "rock":
-            print("tie")
-            play = input("do you want to play again y/n ")
-            hand = ("choose one, rock, paper, or scissors ")
-        if yourList[1] == "paper":
-            print("lose")
-            play = input("do you want to play again y/n ")
-            hand = ("choose one, rock, paper, or scissors ")
-        if yourList[1] == "scissors":
-            print("win")
-            cluck = cluck + 1
-            play = input("do you want to play again y/n ")
-            hand = ("choose one, rock, paper, or scissors ")
-    while hand == ("paper"):
-        
-        if yourList[1] == "rock":
-            print("win")
-            cluck = cluck + 1
-            play = input("do you want to play again y/n ")
-            hand = ("choose one, rock, paper, or scissors ")
-        if yourList[1] == "paper":
-            print("tie")
-            play = input("do you want to play again y/n ")
-            hand = ("choose one, rock, paper, or scissors ")
-        if yourList[1] == "scissors":
-            print("lose")
-            play = input("do you want to play again y/n ")
-            hand = ("choose one, rock, paper, or scissors ")
-
-print(f"your score was {cluck}")
+if(x> 1000):
+  print("how the flip have you played that much you are literally an addicted boi please delete the game")
+elif(x>500):
+  print("Bababoi you have played a heck ton of Fortnite please go study for the SAT")
+elif(x>250):
+  print("you have played a respectable amount of hours")
+else:
+  print("boi please go grind some fort")
