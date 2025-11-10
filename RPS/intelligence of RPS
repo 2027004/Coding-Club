@@ -1,0 +1,153 @@
+import random as r
+play_again = True
+rockTotal = 0
+paperTotal = 0 
+scissorsTotal = 0
+wins = 0
+draws = 0
+losses = 0
+play_again = True
+score = 0
+g = 0
+percentT = 1
+spot1 = 0
+spot2 = 0
+spot3 = 0
+lastChoice = 0
+
+def patternFind():
+    total = 0
+    global rockTotal
+    global paperTotal
+    global scissorsTotal
+    global percentT
+    rockPercent = 0
+    paperPercent = 0
+    scissorsPercent = 0
+    total = rockTotal + paperTotal + scissorsTotal
+    if total !=0:
+        rockPercent = rockTotal/total * 100
+    if total !=0:
+        paperPercent = paperTotal/total * 100
+    if total !=0:
+        scissorsPercent = scissorsTotal/total * 100
+    if rockPercent > 33: #using rock alot - decrease number
+        percentT -= 0.1
+    elif scissorsPercent > 33: #using scissors alot - increase number
+        percentT +=0.1
+    elif paperPercent > 33 and percentT < 1:
+        percentT +=0.1
+    elif paperPercent > 33 and percentT > 1:
+        percentT -=0.1
+def streakFind():
+    global spot1
+    global spot2
+    global spot3
+    global comp_choice
+    x = spot2
+    y = spot3
+    spot1 = x
+    spot2 = y
+    spot3 = lastChoice
+    if spot1 == spot2 and spot2 == spot3 and spot3 == "paper":
+        comp_choice = "scissors"
+    if spot1 == spot2 and spot2 == spot3 and spot3 == "rock":
+        comp_choice = "paper"
+    if spot1 == spot2 and spot2 == spot3 and spot3 == "scissors":
+        comp_choice = "rock"
+
+
+while(play_again):
+    patternFind()
+    user_choice = input("Enter a choice (rock,paper,scissors): ")
+    ee = r.randint(0,100)
+    comp_choice = int(ee*percentT)
+    ee = 0
+    
+    
+    while comp_choice !=200 and g<33:
+        if g == comp_choice:
+            comp_choice = 200
+        else:
+            g +=1
+    while comp_choice !=300 and g<66 and comp_choice !=200:
+        if g == comp_choice:
+            comp_choice = 300
+        else:
+            g +=1
+    while comp_choice !=400 and comp_choice !=200 and comp_choice !=300:
+        if g == comp_choice:
+            comp_choice = 400
+        else:
+            g +=1
+    g = 0
+    if comp_choice == 200:
+        comp_choice = "rock"
+    elif comp_choice == 300:
+        comp_choice = "paper"
+    elif comp_choice == 400:
+        comp_choice = "scissors"
+    streakFind()
+    if user_choice == "rock" and comp_choice == "rock":
+        draws +=1
+        rockTotal +=1
+        lastChoice= "rock"
+    elif user_choice == "paper" and comp_choice == "paper":
+        draws +=1
+        paperTotal +=1
+        lastChoice = "paper"
+    elif user_choice == "scissors" and comp_choice == "scissors":
+        draws +=1
+        scissorsTotal +=1
+        lastChoice = "scissors"
+    elif user_choice == "rock" and comp_choice == "paper":
+        losses +=1
+        rockTotal +=1
+        lastChoice= "rock"
+    elif user_choice == "paper" and comp_choice == "scissors":
+        losses +=1
+        paperTotal +=1
+        lastChoice = "paper"
+    elif user_choice == "scissors" and comp_choice == "rock":
+        losses +=1
+        scissorsTotal +=1
+        lastChoice = "scissors"
+    elif user_choice == "rock" and comp_choice == "scissors":
+        wins+=1
+        rockTotal +=1
+        print("You won!")
+        lastChoice= "rock"
+    elif user_choice == "paper" and comp_choice == "rock":
+        wins+=1
+        paperTotal +=1
+        lastChoice = "paper"
+        print("You won!")
+    elif user_choice == "scissors" and comp_choice == "paper":
+        wins+=1
+        scissorsTotal +=1
+        print("You won!")
+        lastChoice = "scissors"
+    else:        
+        print("not an option")
+    print(f"Computer chose {comp_choice}.\nYou chose {user_choice}\n")
+    print(f"Times won:      {wins}")
+    print(f"Times lost:     {losses}")
+    print(f"Times drawn:    {draws}\n")
+    user_plays_again = input("Want to play again (y or n): ")
+
+    if user_plays_again== "y":
+        play_again = True
+    else:
+        play_again = False
+        
+    
+    if play_again == False:
+        print("Thanks for Playing!\n")
+        print(f"Times won:      {wins}")
+        print(f"Times lost:     {losses}")
+        print(f"Times drawn:    {draws}\n")
+        print(f"Used Rock:      {rockTotal}")
+        print(f"Used Paper:     {paperTotal}")
+        print(f"Used Scissors:  {scissorsTotal}\n")
+
+        
