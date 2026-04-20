@@ -16,7 +16,7 @@ body{
 #display{
     width: 100%;
     padding: 20px;
-    font-size: 5rem;
+    font-size: 4rem;
     text-align: left;
     border: none;
     background-color: hsl(0, 0%, 20%);
@@ -48,4 +48,16 @@ button:hover
 button:active
 {
     background-color: hsl(0, 0%, 55%);
+}
+.operator-btn
+{
+    background-color: hsl(26, 81%, 57%);
+}
+.operator-btn:hover
+{
+    background-color: hsl(26, 77%, 70%);
+}
+.operator-btn:active
+{
+    background-color: hsl(26, 77%, 80%)
 }
